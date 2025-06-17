@@ -1,5 +1,5 @@
 
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Terminal } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -12,8 +12,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Here you would typically send the form data to your backend
-    alert('Thank you for your message! I\'ll get back to you soon.');
+    alert('Message transmitted successfully! I\'ll process your request soon.');
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -25,61 +24,78 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-gray-900 relative overflow-hidden">
+      {/* Matrix-like background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 text-green-500/20 font-mono text-xs animate-pulse">
+          01001000 01100101 01101100 01101100 01101111
+        </div>
+        <div className="absolute top-32 right-20 text-blue-500/20 font-mono text-xs animate-pulse delay-1000">
+          import tensorflow as tf
+        </div>
+        <div className="absolute bottom-20 left-20 text-purple-500/20 font-mono text-xs animate-pulse delay-2000">
+          model.compile(optimizer='adam')
+        </div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Get In Touch
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Initialize Contact
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have a project in mind? Let's work together to bring your ideas to life.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono">
+            Ready to collaborate on the next breakthrough in artificial intelligence?
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Let's Start a Conversation</h3>
-            <p className="text-lg text-gray-600 mb-8">
-              I'm always excited to discuss new opportunities, creative projects, or potential collaborations.
+            <h3 className="text-3xl font-bold mb-6 text-white flex items-center">
+              <Terminal className="mr-3 text-blue-400" />
+              Let's Build Something Intelligent
+            </h3>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              Whether you're looking to implement cutting-edge AI solutions, need research collaboration, 
+              or want to discuss the latest developments in machine learning, I'm here to help.
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full mr-4">
+              <div className="flex items-center group">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600">john@example.com</p>
+                  <p className="font-semibold text-white font-mono">Email</p>
+                  <p className="text-gray-400 font-mono">ai.engineer@example.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-purple-600 text-white rounded-full mr-4">
+              <div className="flex items-center group">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                   <Phone size={20} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="font-semibold text-white font-mono">Phone</p>
+                  <p className="text-gray-400 font-mono">+1 (555) AI-BRAIN</p>
                 </div>
               </div>
 
-              <div className="flex items-center">
-                <div className="flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full mr-4">
+              <div className="flex items-center group">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Location</p>
-                  <p className="text-gray-600">San Francisco, CA</p>
+                  <p className="font-semibold text-white font-mono">Location</p>
+                  <p className="text-gray-400 font-mono">Silicon Valley, CA</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg">
+          <div className="bg-black/50 border border-gray-800 rounded-xl p-8 hover:border-blue-500/50 transition-all duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2 font-mono">
                   Name
                 </label>
                 <input
@@ -89,13 +105,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white font-mono"
                   placeholder="Your Name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2 font-mono">
                   Email
                 </label>
                 <input
@@ -105,13 +121,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white font-mono"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2 font-mono">
                   Message
                 </label>
                 <textarea
@@ -121,16 +137,16 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-white font-mono"
+                  placeholder="Tell me about your AI project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/25 font-mono"
               >
-                Send Message
+                Transmit Message
                 <Send className="ml-2" size={20} />
               </button>
             </form>
