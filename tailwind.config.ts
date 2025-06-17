@@ -106,10 +106,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)'
+						boxShadow: '0 0 5px rgba(239, 68, 68, 0.5)'
 					},
 					'50%': {
-						boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)'
+						boxShadow: '0 0 20px rgba(239, 68, 68, 0.8)'
 					}
 				},
 				'slide-in-left': {

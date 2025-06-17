@@ -30,17 +30,17 @@ const Contact = () => {
         <div className="absolute top-10 left-10 text-green-500/20 font-mono text-xs animate-pulse">
           01001000 01100101 01101100 01101100 01101111
         </div>
-        <div className="absolute top-32 right-20 text-blue-500/20 font-mono text-xs animate-pulse delay-1000">
+        <div className="absolute top-32 right-20 text-red-500/20 font-mono text-xs animate-pulse delay-1000">
           import tensorflow as tf
         </div>
-        <div className="absolute bottom-20 left-20 text-purple-500/20 font-mono text-xs animate-pulse delay-2000">
+        <div className="absolute bottom-20 left-20 text-orange-500/20 font-mono text-xs animate-pulse delay-2000">
           model.compile(optimizer='adam')
         </div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-400 via-orange-400 to-pink-400 bg-clip-text text-transparent">
             Initialize Contact
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono">
@@ -51,7 +51,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
             <h3 className="text-3xl font-bold mb-6 text-white flex items-center">
-              <Terminal className="mr-3 text-blue-400" />
+              <Terminal className="mr-3 text-red-400" />
               Let's Build Something Intelligent
             </h3>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
@@ -61,7 +61,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <div className="flex items-center group">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center group">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-orange-600 to-pink-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -81,7 +81,7 @@ const Contact = () => {
               </div>
 
               <div className="flex items-center group">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-600 to-red-600 text-white rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                   <MapPin size={20} />
                 </div>
                 <div>
@@ -92,7 +92,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-black/50 border border-gray-800 rounded-xl p-8 hover:border-blue-500/50 transition-all duration-300">
+          <div className="bg-black/50 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 transition-all duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2 font-mono">
@@ -105,7 +105,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white font-mono"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 text-white font-mono"
                   placeholder="Your Name"
                 />
               </div>
@@ -121,7 +121,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white font-mono"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 text-white font-mono"
                   placeholder="your@email.com"
                 />
               </div>
@@ -137,14 +137,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-white font-mono"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 resize-none text-white font-mono"
                   placeholder="Tell me about your AI project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/25 font-mono"
+                className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 border border-red-500/50 hover:shadow-xl hover:shadow-red-500/25 font-mono"
               >
                 Transmit Message
                 <Send className="ml-2" size={20} />

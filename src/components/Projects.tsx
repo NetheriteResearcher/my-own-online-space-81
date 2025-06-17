@@ -39,13 +39,13 @@ const Projects = () => {
         <svg className="w-full h-full" viewBox="0 0 800 600">
           <defs>
             <pattern id="neural-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="50" cy="50" r="2" fill="#3B82F6" className="animate-pulse">
+              <circle cx="50" cy="50" r="2" fill="#EF4444" className="animate-pulse">
                 <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
               </circle>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#neural-pattern)" />
-          <g stroke="#3B82F6" strokeWidth="0.5" opacity="0.3">
+          <g stroke="#EF4444" strokeWidth="0.5" opacity="0.3">
             <line x1="50" y1="50" x2="150" y2="150" className="animate-pulse" />
             <line x1="150" y1="50" x2="250" y2="150" className="animate-pulse" />
             <line x1="250" y1="50" x2="350" y2="150" className="animate-pulse" />
@@ -55,7 +55,7 @@ const Projects = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-400 via-orange-400 to-pink-400 bg-clip-text text-transparent">
             AI Projects
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-mono">
@@ -65,7 +65,7 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden hover:border-blue-500/50 hover:bg-gray-900 transition-all duration-300 transform hover:-translate-y-2 group">
+            <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl overflow-hidden hover:border-red-500/50 hover:bg-gray-900 transition-all duration-300 transform hover:-translate-y-2 group">
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
@@ -73,7 +73,7 @@ const Projects = () => {
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute top-4 right-4 p-2 bg-black/50 rounded-full border border-gray-700 group-hover:border-blue-500 transition-colors">
+                <div className="absolute top-4 right-4 p-2 bg-black/50 rounded-full border border-gray-700 group-hover:border-red-500 transition-colors">
                   {project.icon}
                 </div>
                 <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -98,7 +98,7 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-gray-800 border border-gray-700 text-blue-400 text-xs rounded-full font-mono hover:border-blue-500 transition-colors">
+                    <span key={tech} className="px-3 py-1 bg-gray-800 border border-gray-700 text-red-400 text-xs rounded-full font-mono hover:border-red-500 transition-colors">
                       {tech}
                     </span>
                   ))}
@@ -109,7 +109,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 border border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/25">
+          <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-full hover:from-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 border border-red-500/50 hover:shadow-xl hover:shadow-red-500/25">
             View Research Portfolio
             <ExternalLink className="ml-2" size={20} />
           </button>
